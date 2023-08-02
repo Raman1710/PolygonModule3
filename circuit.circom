@@ -4,23 +4,18 @@ pragma circom 2.0.0;
 
 template Multiplier2 () {  
 
-   //signals input
    signal input a;
    signal input b; 
 
-   //signals from gates
-   signal input x;
-   signal input y;
+   signal  x;
+   signal  y;
 
-   //final signal output
    signal output q;
 
-   //component gates used to create custom circuit
    component _andGate = AND();
    component _notGate = NOT();
    component _orGate =  OR();
 
-   //circuit logic
    _andGate.a <== a;
    _andGate.b <== b;
     x <== _andGate.out;
